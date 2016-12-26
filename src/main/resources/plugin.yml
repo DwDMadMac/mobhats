@@ -1,0 +1,70 @@
+name: ${project.artifactId}
+main: ${project.groupId}.Main
+version: ${project.version}
+author: dwd_madmac
+description: Core Commands for DwD Gaming.
+depend: [ProtocolLib]
+
+commands:
+    mobhat:
+        usage: /<command>
+        description: Menu of various Mob Hats.
+        
+permissions:
+    mobhats.command.mobhat:
+        description: Allows you to apply a mob hat.
+        default: op
+    mobhats.command.mobhat.all:
+        description: Grants you permission to use all mobs as a hat.
+        default: op
+    mobhats.command.mobhat.cow:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.chicken:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.squid:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.mooshroom:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.pig:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.sheep:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.pigman:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.ocelot:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.skeleton:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.cavespider:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.silverfish:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.slime:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.zombie:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.spider:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.irongolem:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.snowman:
+        description: Grants you permission to use this mob as a hat.
+        default: op
+    mobhats.command.mobhat.bat:
+        description: Grants you permission to use this mob as a hat.
+        default: op
