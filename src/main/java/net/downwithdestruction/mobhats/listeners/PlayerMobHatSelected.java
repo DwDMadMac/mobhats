@@ -137,14 +137,14 @@ public class PlayerMobHatSelected implements Listener {
 
         if (e.getInventory().getHolder() == null) {
             e.setCancelled(true);
-            //return; // Sanity check, nothing owns this inventory, canceled
+            return; // Sanity check, nothing owns this inventory, canceled
         }
 
         Player player = (Player) e.getWhoClicked();
 
         if (player == null) {
             e.setCancelled(true);
-            return; // Billys sanity check xD
+            return; // Player is not real
         }
 
         if (!(player.getGameMode() == GameMode.SURVIVAL)) {
@@ -153,10 +153,10 @@ public class PlayerMobHatSelected implements Listener {
             return; // Player can not have mob hat when in creative, spectator or Adventure mode
         }
 
-        if (!(player.getPassenger() == null) && player.getPassenger().getType() == EntityType.PLAYER) {
+        if (!(player.getPassenger() == null) && (player.getPassenger().getType() == EntityType.PLAYER)) {
             player.closeInventory();
             player.sendMessage(DwD + GD + "Sorry, you can not set a Mob Hat while a player is riding you!");
-            return; // Player is riding player, canceled
+            return; // A Player is riding a player, canceled
         }
 
         Material clickedItem = e.getCurrentItem().getType();
