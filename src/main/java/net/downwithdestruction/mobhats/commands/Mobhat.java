@@ -282,18 +282,16 @@ public class Mobhat implements CommandExecutor {
             creeperEgg.setItemMeta(creeperMeta);
             inv.setItem(53, creeperEgg);
 
-            if ((target.getPassenger().getType() == EntityType.PIG) && !(target.getPassenger().getPassenger().isEmpty())) {
-                // TnT block (Removes Mob Hat)
-                ItemStack tntExit = new ItemStack(Material.TNT, 1);
-                ItemMeta tntExitMeta = tntExit.getItemMeta();
-                tntExitMeta.setDisplayName(DR + "Remove Your Mob Hat");
-                ArrayList<String> tntExitLore = new ArrayList<>();
-                tntExitLore.add(ChatColor.GOLD + "Clicking this" + ChatColor.RED + " TNT " + ChatColor.GOLD + "item");
-                tntExitLore.add(ChatColor.GOLD + "will remove your Mob Hat.");
-                tntExitMeta.setLore(tntExitLore);
-                tntExit.setItemMeta(tntExitMeta);
-                inv.setItem(0, tntExit);
-            }
+            // TnT block (Removes Mob Hat)
+            ItemStack tntExit = new ItemStack(Material.TNT, 1);
+            ItemMeta tntExitMeta = tntExit.getItemMeta();
+            tntExitMeta.setDisplayName(DR + "Remove Your Mob Hat");
+            ArrayList<String> tntExitLore = new ArrayList<>();
+            tntExitLore.add(ChatColor.GOLD + "Clicking this" + ChatColor.RED + " TNT " + ChatColor.GOLD + "item");
+            tntExitLore.add(ChatColor.GOLD + "will remove your Mob Hat.");
+            tntExitMeta.setLore(tntExitLore);
+            tntExit.setItemMeta(tntExitMeta);
+            inv.setItem(0, tntExit);
 
             // Redstone Block (Closes Mob Hat Menu)
             ItemStack redstoneBlockCloseInv = new ItemStack(Material.REDSTONE_BLOCK, 1);
