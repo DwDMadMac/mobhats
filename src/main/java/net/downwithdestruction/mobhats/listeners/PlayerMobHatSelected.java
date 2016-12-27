@@ -162,7 +162,6 @@ public class PlayerMobHatSelected implements Listener {
 
         Material clickedItem = e.getCurrentItem().getType();
 
-        //if (e.getCurrentItem().getType() == Material.REDSTONE_BLOCK) {
         if (clickedItem == Material.REDSTONE_BLOCK) {
             player.closeInventory();
             return; // Player closed Mob Hats inventory!
