@@ -1,20 +1,20 @@
 /**
- * This file is part of PacketWrapper.
- * Copyright (C) 2012-2015 Kristian S. Strangeland
- * Copyright (C) 2015 dmulloy2
- * <p>
- * PacketWrapper is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
+ * PacketWrapper - ProtocolLib wrappers for Minecraft packets
+ * Copyright (C) dmulloy2 <http://dmulloy2.net>
+ * Copyright (C) Kristian S. Strangeland
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * <p>
- * PacketWrapper is distributed in the hope that it will be useful,
+ *
+ * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * <p>
- * You should have received a copy of the GNU Lesser General Public License
- * along with PacketWrapper.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package com.comphenix.packetwrapper;
 
@@ -28,8 +28,11 @@ import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 
+import java.util.UUID;
+
 public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
-    public static final PacketType TYPE = PacketType.Play.Server.SPAWN_ENTITY_LIVING;
+    public static final PacketType TYPE =
+            PacketType.Play.Server.SPAWN_ENTITY_LIVING;
 
     private static PacketConstructor entityConstructor;
 
@@ -49,12 +52,15 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
     // Useful constructor
     private static PacketContainer fromEntity(Entity entity) {
         if (entityConstructor == null)
-            entityConstructor = ProtocolLibrary.getProtocolManager().createPacketConstructor(TYPE, entity);
+            entityConstructor =
+                    ProtocolLibrary.getProtocolManager()
+                            .createPacketConstructor(TYPE, entity);
         return entityConstructor.createPacket(entity);
     }
 
     /**
      * Retrieve entity ID.
+     *
      * @return The current EID
      */
     public int getEntityID() {
@@ -63,6 +69,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Set entity ID.
+     *
      * @param value - new value.
      */
     public void setEntityID(int value) {
@@ -71,6 +78,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Retrieve the entity that will be spawned.
+     *
      * @param world - the current world of the entity.
      * @return The spawned entity.
      */
@@ -80,6 +88,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Retrieve the entity that will be spawned.
+     *
      * @param event - the packet event.
      * @return The spawned entity.
      */
@@ -87,8 +96,17 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
         return getEntity(event.getPlayer().getWorld());
     }
 
+    public UUID getUniqueId() {
+        return handle.getUUIDs().read(0);
+    }
+
+    public void setUniqueId(UUID value) {
+        handle.getUUIDs().write(0, value);
+    }
+
     /**
      * Retrieve the type of mob.
+     *
      * @return The current Type
      */
     @SuppressWarnings("deprecation")
@@ -98,6 +116,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Set the type of mob.
+     *
      * @param value - new value.
      */
     @SuppressWarnings("deprecation")
@@ -109,58 +128,65 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
      * Retrieve the x position of the object.
      * <p>
      * Note that the coordinate is rounded off to the nearest 1/32 of a meter.
+     *
      * @return The current X
      */
     public double getX() {
-        return handle.getIntegers().read(2) / 32.0D;
+        return handle.getDoubles().read(0);
     }
 
     /**
      * Set the x position of the object.
+     *
      * @param value - new value.
      */
     public void setX(double value) {
-        handle.getIntegers().write(2, (int) Math.floor(value * 32.0D));
+        handle.getDoubles().write(0, value);
     }
 
     /**
      * Retrieve the y position of the object.
      * <p>
      * Note that the coordinate is rounded off to the nearest 1/32 of a meter.
+     *
      * @return The current y
      */
     public double getY() {
-        return handle.getIntegers().read(3) / 32.0D;
+        return handle.getDoubles().read(1);
     }
 
     /**
      * Set the y position of the object.
+     *
      * @param value - new value.
      */
     public void setY(double value) {
-        handle.getIntegers().write(3, (int) Math.floor(value * 32.0D));
+        handle.getDoubles().write(1, value);
     }
 
     /**
      * Retrieve the z position of the object.
      * <p>
      * Note that the coordinate is rounded off to the nearest 1/32 of a meter.
+     *
      * @return The current z
      */
     public double getZ() {
-        return handle.getIntegers().read(4) / 32.0D;
+        return handle.getDoubles().read(2);
     }
 
     /**
      * Set the z position of the object.
+     *
      * @param value - new value.
      */
     public void setZ(double value) {
-        handle.getIntegers().write(4, (int) Math.floor(value * 32.0D));
+        handle.getDoubles().write(2, value);
     }
 
     /**
      * Retrieve the yaw.
+     *
      * @return The current Yaw
      */
     public float getYaw() {
@@ -169,6 +195,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Set the yaw of the spawned mob.
+     *
      * @param value - new yaw.
      */
     public void setYaw(float value) {
@@ -177,88 +204,99 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Retrieve the pitch.
+     *
      * @return The current pitch
      */
-    public float getHeadPitch() {
+    public float getPitch() {
         return (handle.getBytes().read(1) * 360.F) / 256.0F;
     }
 
     /**
      * Set the pitch of the spawned mob.
+     *
      * @param value - new pitch.
      */
-    public void setHeadPitch(float value) {
+    public void setPitch(float value) {
         handle.getBytes().write(1, (byte) (value * 256.0F / 360.0F));
     }
 
     /**
      * Retrieve the yaw of the mob's head.
+     *
      * @return The current yaw.
      */
-    public float getHeadYaw() {
+    public float getHeadPitch() {
         return (handle.getBytes().read(2) * 360.F) / 256.0F;
     }
 
     /**
      * Set the yaw of the mob's head.
+     *
      * @param value - new yaw.
      */
-    public void setHeadYaw(float value) {
+    public void setHeadPitch(float value) {
         handle.getBytes().write(2, (byte) (value * 256.0F / 360.0F));
     }
 
     /**
      * Retrieve the velocity in the x axis.
+     *
      * @return The current velocity X
      */
     public double getVelocityX() {
-        return handle.getIntegers().read(5) / 8000.0D;
+        return handle.getIntegers().read(2) / 8000.0D;
     }
 
     /**
      * Set the velocity in the x axis.
+     *
      * @param value - new value.
      */
     public void setVelocityX(double value) {
-        handle.getIntegers().write(5, (int) (value * 8000.0D));
+        handle.getIntegers().write(2, (int) (value * 8000.0D));
     }
 
     /**
      * Retrieve the velocity in the y axis.
+     *
      * @return The current velocity y
      */
     public double getVelocityY() {
-        return handle.getIntegers().read(6) / 8000.0D;
+        return handle.getIntegers().read(3) / 8000.0D;
     }
 
     /**
      * Set the velocity in the y axis.
+     *
      * @param value - new value.
      */
     public void setVelocityY(double value) {
-        handle.getIntegers().write(6, (int) (value * 8000.0D));
+        handle.getIntegers().write(3, (int) (value * 8000.0D));
     }
 
     /**
      * Retrieve the velocity in the z axis.
+     *
      * @return The current velocity z
      */
     public double getVelocityZ() {
-        return handle.getIntegers().read(7) / 8000.0D;
+        return handle.getIntegers().read(4) / 8000.0D;
     }
 
     /**
      * Set the velocity in the z axis.
+     *
      * @param value - new value.
      */
     public void setVelocityZ(double value) {
-        handle.getIntegers().write(7, (int) (value * 8000.0D));
+        handle.getIntegers().write(4, (int) (value * 8000.0D));
     }
 
     /**
      * Retrieve the data watcher.
      * <p>
      * Content varies by mob, see Entities.
+     *
      * @return The current Metadata
      */
     public WrappedDataWatcher getMetadata() {
@@ -267,6 +305,7 @@ public class WrapperPlayServerSpawnEntityLiving extends AbstractPacket {
 
     /**
      * Set the data watcher.
+     *
      * @param value - new value.
      */
     public void setMetadata(WrappedDataWatcher value) {
