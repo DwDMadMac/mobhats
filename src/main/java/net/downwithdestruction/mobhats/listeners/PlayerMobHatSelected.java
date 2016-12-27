@@ -135,10 +135,11 @@ public class PlayerMobHatSelected implements Listener {
             return; // Click happened outside of inventory and/or inside empty inventory box, canceled.
         }
 
+        /*
         if (e.getInventory().getHolder() == null) {
             e.setCancelled(true);
             return; // Sanity check, nothing owns this inventory, canceled
-        }
+        }*/
 
         Player player = (Player) e.getWhoClicked();
 
