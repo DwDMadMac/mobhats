@@ -2,7 +2,7 @@ package net.downwithdestruction.mobhats.tasks;
 
 import net.downwithdestruction.mobhats.Main;
 import net.downwithdestruction.mobhats.Utils;
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Creeper;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Pig;

@@ -5,7 +5,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import net.downwithdestruction.mobhats.Main;
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,7 +48,7 @@ public class TitleManager {
         sendPacket(player, packet);
     }
 
-    public static void sendSubtitle(Player player, int in, int stay, int out, String subtitle) {
+    private static void sendSubtitle(Player player, int in, int stay, int out, String subtitle) {
         if (subtitle == null || subtitle.isEmpty()) {
             return;
         }

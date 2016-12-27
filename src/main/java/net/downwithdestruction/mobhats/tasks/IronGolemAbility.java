@@ -1,7 +1,7 @@
 package net.downwithdestruction.mobhats.tasks;
 
 import net.downwithdestruction.mobhats.Utils;
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.IronGolem;
 import org.bukkit.entity.Pig;
@@ -31,6 +31,7 @@ public class IronGolemAbility {
     private static ChatColor DR = ChatColor.DARK_RED;
     private static String DwD = DR + "[" + ChatColor.GRAY + "DwD" + DR + "] ";
 
+    @SuppressWarnings("deprecation")
     public static void attachedMobHatIronGolem(Player player) {
         if ((player.hasPermission("mobhats.command.mobhat.irongolem")) || (player.hasPermission("mobhats.command.mobhat.all"))) {
             pig = (Pig) player.getWorld().spawnEntity(player.getLocation(), EntityType.PIG);
@@ -74,6 +75,7 @@ public class IronGolemAbility {
         }
     }
 
+    @SuppressWarnings("deprecation")
     public static void detachedMobHatIronGolem(Player player) {
         player.setMaxHealth(20.0D);
         //player.setHealth(20.0D - (player.getHealth() - 80.0D));

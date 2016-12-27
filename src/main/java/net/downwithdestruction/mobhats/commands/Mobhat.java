@@ -1,8 +1,8 @@
 package net.downwithdestruction.mobhats.commands;
 
 import net.downwithdestruction.mobhats.Main;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

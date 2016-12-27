@@ -2,8 +2,8 @@ package net.downwithdestruction.mobhats.tasks;
 
 import net.downwithdestruction.mobhats.Main;
 import net.downwithdestruction.mobhats.Utils;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
@@ -19,6 +19,7 @@ import static net.pl3x.bukkit.cities.manager.TitleManager.*;
 
 /**
  * Created by madmac on 10/20/15.
+ *
  */
 public class OcelotAbility implements Listener {
     private static Pig pig;

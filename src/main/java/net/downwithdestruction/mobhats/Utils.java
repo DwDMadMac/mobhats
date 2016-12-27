@@ -1,8 +1,8 @@
 package net.downwithdestruction.mobhats;
 
-import net.minecraft.server.v1_10_R1.EntityLiving;
-import net.minecraft.server.v1_10_R1.NBTTagCompound;
-import org.bukkit.craftbukkit.v1_10_R1.entity.CraftEntity;
+import net.minecraft.server.v1_11_R1.EntityLiving;
+import net.minecraft.server.v1_11_R1.NBTTagCompound;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftEntity;
 import org.bukkit.entity.Entity;
 
 /**
@@ -16,7 +16,7 @@ import org.bukkit.entity.Entity;
  */
 public class Utils {
     public static void setNoAI(Entity e) {
-        net.minecraft.server.v1_10_R1.Entity nmsEntity = ((CraftEntity) e).getHandle();
+        net.minecraft.server.v1_11_R1.Entity nmsEntity = ((CraftEntity) e).getHandle();
 
         NBTTagCompound tag = new NBTTagCompound();
 

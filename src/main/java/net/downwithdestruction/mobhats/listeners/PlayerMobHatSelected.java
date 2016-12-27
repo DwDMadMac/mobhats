@@ -2,7 +2,7 @@ package net.downwithdestruction.mobhats.listeners;
 
 import net.downwithdestruction.mobhats.Main;
 import net.downwithdestruction.mobhats.tasks.*;
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
