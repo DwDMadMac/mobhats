@@ -12,7 +12,7 @@
     </properties>
 
     <repositories>
-        <!--Bukkit-->
+        <!--Spigot-->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
