@@ -1,5 +1,5 @@
 |          |                                                                               |          |
 |----------|:-----------------------------------------------------------------------------:|----------|
-|          | ![MobHats by DwD Gaming](https://dl.dropboxusercontent.com/u/15187045/Pl3x_Logo.png) |          |
+|          | ![MobHats by DwD Gaming](https://downwithdestruction.net/img/logo.png) |          |
 |          | **MobHats**                                                                |          |
 |          | [Wiki](https://bitbucket.org/dwdgamingdev/mobhats/wiki)           |          |
